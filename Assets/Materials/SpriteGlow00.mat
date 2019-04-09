@@ -72,7 +72,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _TextureSample2:
-        m_Texture: {fileID: 2800000, guid: a18e47b47f8aac5459db7f2154e387cb, type: 3}
+        m_Texture: {fileID: 2800000, guid: f2f7d6ab5a5a76549993adf393bbf0af, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _texcoord:
@@ -88,13 +88,15 @@ Material:
     - _Cutoff: 0.5
     - _DetailNormalMapScale: 1
     - _DstBlend: 0
-    - _Emission: 1.6
+    - _Emission: 1
     - _EnableExternalAlpha: 0
+    - _EnableFlip: 0
     - _GlossMapScale: 1
     - _Glossiness: 0.5
     - _GlossyReflections: 1
-    - _ImageMaskValue: 1
+    - _ImageMaskValue: -0.2
     - _IsOutlineEnabled: 1
+    - _Keyword0: 0
     - _LineMoveValue: 1
     - _Metallic: 0
     - _Mode: 0

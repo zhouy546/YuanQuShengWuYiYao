@@ -2,6 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+
+public enum NodeType {
+LeftNode,RightNode
+}
+
 public class BannerCtr : MonoBehaviour
 {
     public List<Node_LableCtr> node_LableCtrs = new List<Node_LableCtr>();
@@ -14,10 +19,18 @@ public class BannerCtr : MonoBehaviour
     IEnumerator StartNodeLableAnimation() {
         foreach (var item in node_LableCtrs)
         {
-            float val = Random.Range(3f, 6f);
+            float val = Random.Range(2f, 3f);
 
             yield return new WaitForSeconds(val);
-            item.animator.SetBool("Play", true);
+            if (item.nodeType == NodeType.RightNode)
+            {
+                item.animator.SetInteger("Play", 0);
+
+            }
+            else if (item.nodeType == NodeType.LeftNode) {
+                item.animator.SetInteger("Play", 1);
+            }
+
         }
     }
 

@@ -77,10 +77,10 @@ Material:
     - _FMode: 1
     - _FPow: 5
     - _Fade: 0
-    - _Fold: 21
-    - _GDist: 0.291
+    - _Fold: 5
+    - _GDist: 0.434
     - _GEmission: 0
-    - _GPower: 1.15
+    - _GPower: 0.96
     - _GlossMapScale: 1
     - _Glossiness: 0.5
     - _GlossyReflections: 1
@@ -106,12 +106,12 @@ Material:
     - _WParam: 0
     - _WProjStrength: 2
     - _WStyle: 0
-    - _WThickness: 0.02145
+    - _WThickness: 0.10428001
     - _WTransparency: 1
     - _WUV: 0
     - _ZWrite: 0
     m_Colors:
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
-    - _GColor: {r: 0, g: 0.86274517, b: 0.9803922, a: 1}
-    - _WColor: {r: 0, g: 0.86214215, b: 0.98039216, a: 1}
+    - _GColor: {r: 0.34509805, g: 0.9098039, b: 1, a: 1}
+    - _WColor: {r: 0.34509805, g: 0.9098039, b: 1, a: 1}

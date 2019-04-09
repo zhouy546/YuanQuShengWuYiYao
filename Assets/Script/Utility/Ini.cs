@@ -8,6 +8,8 @@ public class Ini : MonoBehaviour {
 
     private BannerCtr bannerCtr;
 
+    private CanvasGroupCtr canvasGroupCtr;
+
     private void  Start() {
          StartCoroutine(initialization());
     }
@@ -16,10 +18,16 @@ public class Ini : MonoBehaviour {
     {
         bannerCtr = FindObjectOfType<BannerCtr>();
 
+        readJson = FindObjectOfType<ReadJson>();
 
+        canvasGroupCtr= FindObjectOfType<CanvasGroupCtr>();
         //------------------------------------------------------
 
+        yield return StartCoroutine(readJson.initialization());
+
         yield return StartCoroutine(ReadAssetImage());
+
+        canvasGroupCtr.ini();
 
         bannerCtr.ini();
     }
@@ -28,7 +36,7 @@ public class Ini : MonoBehaviour {
     {
         yield return StartCoroutine(BannerNodeSprites());
 
-        
+        yield return StartCoroutine(CanvasGroupSprite());
     }
 
 
@@ -49,7 +57,21 @@ public class Ini : MonoBehaviour {
 
 
 
+    IEnumerator CanvasGroupSprite() {
+        for (int i = 0; i < ValueSheet.canvasNodes.Count; i++)
+        {
 
+            List<Sprite> CanvasGroupSpritesTemp = new List<Sprite>();
+            string path = "/UI/CanvasNodes/"+(i+1).ToString()+"/";
+
+            yield return StartCoroutine( GetSpriteListFromStreamAsset(path, "png", CanvasGroupSpritesTemp));
+
+            ValueSheet.canvasGroupSprites.Add(CanvasGroupSpritesTemp);
+
+            //Debug.Log(ValueSheet.canvasGroupSprites.Count);
+            //Debug.Log(ValueSheet.canvasGroupSprites[i].sprites.Count);
+        }
+    }
 
     IEnumerator BannerNodeSprites()
     {

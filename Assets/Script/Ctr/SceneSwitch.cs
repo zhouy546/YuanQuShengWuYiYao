@@ -7,7 +7,8 @@ public class SceneSwitch : MonoBehaviour
     public Transform[] SwitchTrans = new Transform[2];
     public Transform bodyTrans;
     public bool EnableKyeCtr;
-
+    public BodyRotation bodyRotation;
+    public float scale;
     // Start is called before the first frame update
     void Start()
     {
@@ -22,11 +23,12 @@ public class SceneSwitch : MonoBehaviour
         {
             if (Input.GetKeyDown(KeyCode.A))
             {
-                EventCenter.Broadcast(EventDefine.GoSoloScene);
+                EventCenter.Broadcast(EventDefine.GOSoloSceneUDP,"solo");
+
             }
             else if (Input.GetKeyDown(KeyCode.D))
             {
-                EventCenter.Broadcast(EventDefine.GoDefaultScene);
+                EventCenter.Broadcast(EventDefine.GoDefaultUDP,"default");
             }
         }
     }
@@ -34,11 +36,14 @@ public class SceneSwitch : MonoBehaviour
 
     private void goDefaultScene() {
         LeanTween.move(bodyTrans.gameObject, SwitchTrans[0].position, 1f).setEase(LeanTweenType.easeInOutQuad);
+        LeanTween.scale(bodyRotation.gameObject, Vector3.one * scale, 1f);
      
     }
 
     private void goSoloScene() {
         LeanTween.move(bodyTrans.gameObject, SwitchTrans[1].position, 1f).setEase(LeanTweenType.easeInOutQuad);
         LeanTween.rotateLocal(bodyTrans.gameObject, SwitchTrans[1].localRotation.eulerAngles, 1f).setEase(LeanTweenType.easeInOutQuad);
+        LeanTween.scale(bodyRotation.gameObject, Vector3.one , 1f);
+
     }
 }

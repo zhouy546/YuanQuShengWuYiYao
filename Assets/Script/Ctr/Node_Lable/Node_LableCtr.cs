@@ -6,6 +6,8 @@ using UnityEngine.UI;
 
 public class Node_LableCtr : Ictr
 {
+    public NodeType nodeType;
+
     public Animator animator;
 
     public PlayableDirector playableDirector;
@@ -14,6 +16,7 @@ public class Node_LableCtr : Ictr
 
     public Image NodeImage;
 
+    public float MinAngle=-33f, MaxAngle=9f;
 
     public Transform SocketTransform;
     //public Image MaskImage;
@@ -64,18 +67,36 @@ public class Node_LableCtr : Ictr
     }
 
     bool checkCurrentRot() {
-      //  Debug.Log("running" + this.transform.localRotation.eulerAngles.y);
+        //  Debug.Log("running" + this.transform.localRotation.eulerAngles.y);
 
-        float val = Mathf.Sin(Mathf.Deg2Rad * (this.transform.localRotation.eulerAngles.y));
 
-        if (val > Mathf.Sin (Mathf.Deg2Rad*- 33f) && val < Mathf.Sin(Mathf.Deg2Rad * 9f))
+        if (nodeType == NodeType.LeftNode)
         {
-    
-            return true;
+            float val = this.transform.localRotation.eulerAngles.y;
+            if (val > MinAngle && val < MaxAngle)
+            {
+                return true;
+            }
+            else {
+                return false;
+            }
+
         }
-        else {
-            return false;
+        else if (nodeType == NodeType.RightNode) {
+            float val = Mathf.Sin(Mathf.Deg2Rad * (this.transform.localRotation.eulerAngles.y));
+
+            if (val > Mathf.Sin(Mathf.Deg2Rad * MinAngle) && val < Mathf.Sin(Mathf.Deg2Rad * MaxAngle))
+            {
+
+                return true;
+            }
+            else
+            {
+                return false;
+            }
         }
+
+        return false;
     }
 
     private void TURNOFFdefaultScene() {

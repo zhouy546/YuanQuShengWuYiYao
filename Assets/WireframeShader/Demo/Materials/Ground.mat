@@ -9,9 +9,9 @@ Material:
   m_PrefabAsset: {fileID: 0}
   m_Name: Ground
   m_Shader: {fileID: 46, guid: 0000000000000000f000000000000000, type: 0}
-  m_ShaderKeywords: _AA_ON _GLOSSYREFLECTIONS_OFF _GLOW_ON _MODE_DEFAULT _QUAD_ON
-    _WLIGHT_SURFACE _WSTYLE_DEFAULT _WUV_UV0
-  m_LightmapFlags: 4
+  m_ShaderKeywords: _AA_ON _EMISSION _GLOSSYREFLECTIONS_OFF _GLOW_ON _MODE_DEFAULT
+    _QUAD_ON _WLIGHT_SURFACE _WSTYLE_DEFAULT _WUV_UV0
+  m_LightmapFlags: 1
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
   m_CustomRenderQueue: -1
@@ -80,12 +80,12 @@ Material:
     - _GEmission: 0
     - _GPower: 0.76
     - _GlossMapScale: 1
-    - _Glossiness: 0
+    - _Glossiness: 0.243
     - _GlossyReflections: 0
     - _Glow: 1
     - _InvFade: 1
     - _Limits: 1
-    - _Metallic: 0
+    - _Metallic: 0.273
     - _Mode: 0
     - _OcclusionStrength: 1
     - _Parallax: 0.02
@@ -109,8 +109,8 @@ Material:
     - _WUV: 0
     - _ZWrite: 1
     m_Colors:
-    - _Color: {r: 0.54901963, g: 0.54901963, b: 0.54901963, a: 0}
-    - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
+    - _Color: {r: 0.8679245, g: 0.8679245, b: 0.8679245, a: 0}
+    - _EmissionColor: {r: 0.09803922, g: 0.09803922, b: 0.09803922, a: 1}
     - _GColor: {r: 1, g: 1, b: 1, a: 1}
     - _TintColor: {r: 0.5, g: 0.5, b: 0.5, a: 0.5}
     - _WColor: {r: 1, g: 1, b: 1, a: 1}

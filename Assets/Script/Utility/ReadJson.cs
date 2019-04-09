@@ -21,8 +21,7 @@ public class ReadJson : MonoBehaviour {
 
     private string jsonString;
 
- 
-
+    public CanvasGroupCtr canvasGroupCtr;
 
     public IEnumerator initialization() {
         if (instance == null)
@@ -51,48 +50,50 @@ public class ReadJson : MonoBehaviour {
        itemDate = JsonMapper.ToObject(jsonString.ToString());
 
 
-        //for (int i = 0; i < itemDate["information"].Count; i++)
-
-        //{
-        //    SetupNodeList(i, ref ValueSheet.NodeList,"information");
-
-        //}
-
-        //for (int i = 0; i < itemDate["Intro"].Count; i++)
-
-        //{
-        //    SetupNodeList(i, ref ValueSheet.Intro_NodeList, "Intro");
-        //}
-
-        //for (int i = 0; i < itemDate["Strategy"].Count; i++)
-        //{
-        //    SetupNodeList(i, ref ValueSheet.strategy_NodeList, "Strategy");
-
-        //}
+        for (int i = 0; i<itemDate["information"].Count; i++)
+        {
+            SetupCanvasNodeList(i, ref ValueSheet.canvasNodes, "information");
+        }
 
 
+        //setNode
+        foreach (CanvasNodeCtr ctr in canvasGroupCtr.canvasNodeCtrs)
+        {
+            int num = canvasGroupCtr.canvasNodeCtrs.IndexOf(ctr);
 
- 
+            ctr.canvasNode = ValueSheet.canvasNodes[num];
+        }
+
+
+        //setDictionary
+        foreach (CanvasNodeCtr ctr in canvasGroupCtr.canvasNodeCtrs)
+        {
+            ValueSheet.UDP_CanvasNodeCtrPair.Add(ctr.canvasNode.UDP, ctr);
+        }
+
+
 
         //ValueSheet.BGMVolume = float.Parse(itemDate["Setup"][0]["BGMVolume"].ToString());
         //ValueSheet.MainVideoUrl =itemDate["Setup"][0]["MainVideUrl"].ToString();
 
-      
+        foreach (var item in ValueSheet.UDP_CanvasNodeCtrPair)
+        {
+            Debug.Log("key_:"+item.Key);
+
+            Debug.Log("ID_:" + item.Value.canvasNode.id);
+        }
 
     }
 
-    //void SetupNodeList(int i, ref List<Node> nodes,string SectionStr)
-    //{
-    //    int id;
-    //    string bigTitle;
-    //    string VideoPath;
+    void SetupCanvasNodeList(int i, ref List<CanvasNode> nodes, string SectionStr)
+    {
+        int id;
+        string UDP;
 
-    //    id = int.Parse(itemDate[SectionStr][i]["id"].ToString());//get id;
+        id = int.Parse(itemDate[SectionStr][i]["id"].ToString());//get id;
 
-    //    bigTitle = itemDate[SectionStr][i]["BigTitle"].ToString();//get bigtitle;
+        UDP = itemDate[SectionStr][i]["UDP"].ToString();//get video path;
 
-    //    VideoPath = itemDate[SectionStr][i]["VideoPath"].ToString();//get video path;
-
-    //    nodes.Add(new Node(id, bigTitle, VideoPath));
-    //}
+        nodes.Add(new CanvasNode(id,  UDP));
+    }
 }

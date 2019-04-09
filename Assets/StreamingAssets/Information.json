@@ -8,7 +8,7 @@
 
 			"BigTitle": "01湖南长沙科技新城",
             
-            "VideoPath":"01湖南长沙科技新城.mp4"
+            "UDP":"2014"
 
 		},
 
@@ -17,21 +17,21 @@
 			"id": 1,
 
 			"BigTitle": "02重庆两江健康科技城",
-             "VideoPath":"02重庆两江健康科技城.mp4"
+             "UDP":"2010"
 
 		},
         {
             "id": 2,
 
 			"BigTitle": "03山西智慧科技城",
-             "VideoPath":"03山西智慧科技城.mp4"
+             "UDP":"2016"
             
         },
         {
             "id": 3,
 
 			"BigTitle": "04辽宁京沈智造科技城",
-             "VideoPath":"04辽宁京沈智造科技城.mp4"
+             "UDP":"2009"
             
         },
                 {
@@ -39,38 +39,50 @@
 
 			"BigTitle": "05山东健康科技智慧城",
                     
-            "VideoPath":"05山东健康科技智慧城.mp4"
+            "UDP":"2017"
             
         },
                 {
             "id": 5,
 
 			"BigTitle": "06北京岭秀",
-            "VideoPath":"06北京岭秀.mp4"
+            "UDP":"2015"
             
         },  {
             "id": 6,
 
 			"BigTitle": "07天津金科天湖",
-            "VideoPath":"07天津金科天湖.mp4"
+            "UDP":"2018"
             
         },{
             "id": 7,
 
 			"BigTitle": "08金科山水洲",
-            "VideoPath":"08金科山水洲.mp4"
+            "UDP":"2019"
             
         },{
             "id": 8,
 
 			"BigTitle": "09四川金科宽窄水乡",
-            "VideoPath":"09四川金科宽窄水乡.mp4"
+            "UDP":"2011"
             
         },{
             "id": 9,
 
 			"BigTitle": "10重庆金科中华养生城",
-            "VideoPath":"10重庆金科中华养生城.mp4"
+            "UDP":"2012"
+            
+        },{
+            "id": 10,
+
+			"BigTitle": "10重庆金科中华养生城",
+            "UDP":"2020"
+            
+        },{
+            "id": 11,
+
+			"BigTitle": "10重庆金科中华养生城",
+            "UDP":"2013"
             
         }
 
@@ -82,38 +94,8 @@
 
 
 	],
-    "Intro":[
-        {			
-			"id": 0,
 
-			"BigTitle": "交通规划",
-            
-            "VideoPath":"00交通规划.mp4"
-        },{
-            
-			"id": 1,
 
-			"BigTitle": "一心",
-             "VideoPath":"01一心.mp4"
-        }
-
-    ],
-    "Strategy":[
-        {			
-			"id": 0,
-
-			"BigTitle": "交通规划",
-            
-            "VideoPath":"00交通规划.mp4"
-        },
-        {
-            "id": 1,
-			"BigTitle": "一心",
-            "VideoPath":"01一心.mp4"
-            
-        }
-
-    ],
     "Setup" : [
         {
             "BGMVolume" : 0.1,

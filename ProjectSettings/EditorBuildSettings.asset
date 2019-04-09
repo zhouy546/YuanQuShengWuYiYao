@@ -7,5 +7,8 @@ EditorBuildSettings:
   m_Scenes:
   - enabled: 1
     path: Assets/Scenes/SampleScene.unity
-    guid: 99c9720ab356a0642a771bea13969a05
+    guid: 919ce6b64541ad1498f10f8d7b946674
+  - enabled: 0
+    path: Assets/Scenes/Resulation.unity
+    guid: eb645da9cf4f1ab4cab0e3d703704f84
   m_configObjects: {}
