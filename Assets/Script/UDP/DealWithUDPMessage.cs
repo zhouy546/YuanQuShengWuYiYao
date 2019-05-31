@@ -56,13 +56,16 @@ public class DealWithUDPMessage : MonoBehaviour {
                 EventCenter.Broadcast<string>(EventDefine.GoDefaultUDP, dataTest);
             }
 
-           
+            else if (dataTest == "2024") {
+                EventCenter.Broadcast(EventDefine.GoZongShu);
+            }
+
 
             else if (ValueSheet.UDP_CanvasNodeCtrPair.ContainsKey(dataTest))//进入单个
             {
-               // Debug.Log(ValueSheet.UDP_CanvasNodeCtrPair.ContainsKey(dataTest));
-               EventCenter.Broadcast<string>(EventDefine.GOSoloSceneUDP,dataTest);
-            
+                // Debug.Log(ValueSheet.UDP_CanvasNodeCtrPair.ContainsKey(dataTest));
+                EventCenter.Broadcast<string>(EventDefine.GOSoloSceneUDP, dataTest);
+
 
             }
 
@@ -74,8 +77,8 @@ public class DealWithUDPMessage : MonoBehaviour {
         yield return new WaitForSeconds(1);
         CurrenCountDownTime--;
         if (CurrenCountDownTime == 0) {
-            string s = "2025";
-            EventCenter.Broadcast<string>(EventDefine.GoDefaultUDP, s);
+            EventCenter.Broadcast(EventDefine.GoZongShu);
+
             CurrenCountDownTime = CountDownTime;
         }
         StartCoroutine(CountDown());
@@ -100,6 +103,7 @@ public class DealWithUDPMessage : MonoBehaviour {
     {
         EventCenter.AddListener<string>(EventDefine.GoDefaultUDP, toDefaultScene);
         EventCenter.AddListener<string>(EventDefine.GOSoloSceneUDP,toSoloScene);
+        EventCenter.AddListener(EventDefine.GoZongShu, toZongShu);
         StartCoroutine(CountDown());
     }
 
@@ -111,6 +115,15 @@ public class DealWithUDPMessage : MonoBehaviour {
         }
 
         //Debug.Log("数据：" + dataTest);  
+    }
+
+
+    public void toZongShu() {
+        if (PerviousKey != "null")
+        {
+            ValueSheet.UDP_CanvasNodeCtrPair[PerviousKey].Hide();
+        }
+        PerviousKey = "null";
     }
 
     public void toDefaultScene(string key) {

@@ -4,4 +4,5 @@
     GoDefaultUDP,
     GoSoloScene,
     GOSoloSceneUDP,
+    GoZongShu,
 }

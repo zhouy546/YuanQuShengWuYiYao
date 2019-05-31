@@ -31,6 +31,7 @@ public class Node_LableCtr : Ictr
     void Start()
     {
         EventCenter.AddListener(EventDefine.GoSoloScene, TURNOFFdefaultScene);
+        EventCenter.AddListener(EventDefine.GoZongShu, TURNOFFdefaultScene);
         EventCenter.AddListener(EventDefine.GoDefaultScene, TURNONdefaultScene);
 
         //  RotationMySelf();

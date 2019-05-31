@@ -9,11 +9,14 @@ public class BodyRotation : MonoBehaviour
     public float speed = 1;
 
     bool isRoattion = true;
+
+    public SpriteRenderer spriteRender;
     // Start is called before the first frame update
     void Start()
     {
         EventCenter.AddListener(EventDefine.GoDefaultScene, TurnONRotation);
         EventCenter.AddListener(EventDefine.GoSoloScene, TurnOFFRotation);
+        EventCenter.AddListener(EventDefine.GoZongShu, TurnOFFrotation_ShadowRender);
 
     }
 
@@ -28,12 +31,19 @@ public class BodyRotation : MonoBehaviour
     private void TurnONRotation() {
      //   TurnOnCircleLoop();
         isRoattion = true;
+        spriteRender.enabled = true;
     }
 
     private void TurnOFFRotation()
     {
         isRoattion = false;
-     //   TurnOffCircleLoop();
+        spriteRender.enabled = true;
+        //   TurnOffCircleLoop();
+    }
+
+    public void TurnOFFrotation_ShadowRender() {
+        isRoattion = false;
+        spriteRender.enabled = false;
     }
 
     public void TurnOffCircleLoop() {

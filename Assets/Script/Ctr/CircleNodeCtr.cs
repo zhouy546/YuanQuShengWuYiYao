@@ -15,6 +15,7 @@ public class CircleNodeCtr : MonoBehaviour
     {
         EventCenter.AddListener(EventDefine.GoDefaultScene, ShowMesh);
         EventCenter.AddListener(EventDefine.GoSoloScene, HideMesh);
+        EventCenter.AddListener(EventDefine.GoZongShu, HideMesh);
     }
 
     // Update is called once per frame

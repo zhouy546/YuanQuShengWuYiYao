@@ -14,6 +14,7 @@ public class SceneSwitch : MonoBehaviour
     {
         EventCenter.AddListener(EventDefine.GoDefaultScene, goDefaultScene);
         EventCenter.AddListener(EventDefine.GoSoloScene, goSoloScene);
+        EventCenter.AddListener(EventDefine.GoZongShu, goZongShu);
     }
 
     // Update is called once per frame
@@ -35,15 +36,21 @@ public class SceneSwitch : MonoBehaviour
 
 
     private void goDefaultScene() {
+        bodyRotation.GetComponent<MeshRenderer>().enabled = true;
         LeanTween.move(bodyTrans.gameObject, SwitchTrans[0].position, 1f).setEase(LeanTweenType.easeInOutQuad);
         LeanTween.scale(bodyRotation.gameObject, Vector3.one * scale, 1f);
      
     }
 
     private void goSoloScene() {
+        bodyRotation.GetComponent<MeshRenderer>().enabled = true;
         LeanTween.move(bodyTrans.gameObject, SwitchTrans[1].position, 1f).setEase(LeanTweenType.easeInOutQuad);
         LeanTween.rotateLocal(bodyTrans.gameObject, SwitchTrans[1].localRotation.eulerAngles, 1f).setEase(LeanTweenType.easeInOutQuad);
         LeanTween.scale(bodyRotation.gameObject, Vector3.one , 1f);
 
+    }
+
+    public void goZongShu() {
+        bodyRotation.GetComponent<MeshRenderer>().enabled = false;
     }
 }

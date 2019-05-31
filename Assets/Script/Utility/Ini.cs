@@ -30,6 +30,9 @@ public class Ini : MonoBehaviour {
         canvasGroupCtr.ini();
 
         bannerCtr.ini();
+
+        EventCenter.Broadcast(EventDefine.GoZongShu);
+
     }
 
     IEnumerator ReadAssetImage()

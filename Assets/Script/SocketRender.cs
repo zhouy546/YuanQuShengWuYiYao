@@ -14,6 +14,7 @@ public class SocketRender : MonoBehaviour
             instance = this;
         }
         EventCenter.AddListener(EventDefine.GoDefaultScene, disableAll);
+        EventCenter.AddListener(EventDefine.GoZongShu, disableAll);
     }
 
     // Update is called once per frame
